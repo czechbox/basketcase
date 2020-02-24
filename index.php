@@ -39,9 +39,9 @@ $rules[] = $shippingRule90;
 // interesting options in future.
 //
 
-$productRuleBOBOHP = new ProductRuleBOGO('R01',2,0.50);
-$productRuleBOBOHP->setName('BOGOHP');
-$rules[] = $productRuleBOBOHP;
+$productRuleBOGOHP = new ProductRuleBOGO('R01',2,0.50);
+$productRuleBOGOHP->setName('BOGOHP');
+$rules[] = $productRuleBOGOHP;
 
 
 // Create and run the test case baskets

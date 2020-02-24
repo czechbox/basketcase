@@ -40,9 +40,9 @@ $rules[] = $shippingRule90;
 #### Product Rules
 The Product Rule being used takes three arguments: productId, minimum qualifying purchase and the discount to be applied. Like the Shipping rules, the name is added, but not required.
 ```
-$productRuleBOBOHP = new ProductRuleBOGO('R01',2,0.50);
-$productRuleBOBOHP->setName('BOGOHP');
-$rules[] = $productRuleBOBOHP;
+$productRuleBOGOHP = new ProductRuleBOGO('R01',2,0.50);
+$productRuleBOGOHP->setName('BOGOHP');
+$rules[] = $productRuleBOGOHP;
 ```
 A quick note: product & shipping rules are differentiated by type in their constructor. I'm sure there's a better way to do this, but it works for now.
 ### The Basket
