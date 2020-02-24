@@ -9,12 +9,16 @@ require "autoloader.php";
 
 // Normally this would sit in a datastore of some kind
 $catalogue = new Catalogue();
+// the addProduct method creates a Product object within the catalogue
 $catalogue->addProduct('R01','Red Widget',32.95);
 $catalogue->addProduct('G01', 'Green Widget', 24.95);
 $catalogue->addProduct('B01', 'Blue Widget', 7.95);
 
-//setup rules again, normally would be in a datastore of some sort
+//setup rules, normally would also put in a datastore of some sort
+
+// an array to hold all our rules to pass to the Basket constructor
 $rules = array();
+
 // shipping rules
 $shippingRuleDefault = new ShippingRule(0,49.99,4.95);
 $shippingRuleDefault->setName('default');
@@ -29,13 +33,18 @@ $shippingRule90 = new ShippingRule(90.00, 0.00,0.00);
 $shippingRule90->setName('OVER90');
 $rules[] = $shippingRule90;
 
-// product rules
+// product rule(s)
+
+// The Rule I implemented is probably a little over cooked for what needs to be done, but it allows for some
+// interesting options in future.
+//
+
 $productRuleBOBOHP = new ProductRuleBOGO('R01',2,0.50);
 $productRuleBOBOHP->setName('BOGOHP');
 $rules[] = $productRuleBOBOHP;
 
 
-// Test case baskets
+// Create and run the test case baskets
 $basket1 = new MyBasket($catalogue, $rules);
 
 $basket1->add('B01');

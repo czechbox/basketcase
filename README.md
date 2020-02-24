@@ -6,6 +6,7 @@ A simple-ish Basket model implementation as well as models for Catalogue, Produc
 * No UI is required
 * Items will be added to the Basket one at a time
 * The provided test output is sufficient test coverage in this PoC
+* When discount values are created, the output is rounded down. This was needed to make the output match the expected totals. It would be trivial to change this if required.
 
 ### The Catalogue is defined and Products added
 ```
@@ -17,7 +18,7 @@ $catalogue->addProduct('B01', 'Blue Widget', 7.95);
 Product models are created within the Catalogue.
 
 ### The Rules are then created
-Each rule is appended to an array to be loaded in the Basket constructor
+Each rule is appended to an array to be loaded in the Basket constructor.
 
 #### Shipping Rules
 Shipping Rules take arguments for minimum cart value, maximum cart value and shipping cost. 
@@ -43,6 +44,7 @@ $productRuleBOBOHP = new ProductRuleBOGO('R01',2,0.50);
 $productRuleBOBOHP->setName('BOGOHP');
 $rules[] = $productRuleBOBOHP;
 ```
+A quick note: product & shipping rules are differentiated by type in their constructor. I'm sure there's a better way to do this, but it works for now.
 ### The Basket
 Now that we've built up the Catalogue, Product and Rules we can populate the Basket model. It takes two arguments, the Catalogue object and the array of Rules.
 ```
