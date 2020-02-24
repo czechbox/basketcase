@@ -15,7 +15,13 @@ class ShippingRule extends Rule
 
     private $charge;
 
-    public function __construct(float $min_spend,float $max_spend, float $charge)
+    /**
+     * ShippingRule constructor.
+     * @param float $min_spend
+     * @param float $max_spend
+     * @param float $charge
+     */
+    public function __construct(float $min_spend, float $max_spend, float $charge)
     {
         $this->setType('shipping');
         $this->setMinSpend($min_spend);

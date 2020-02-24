@@ -2,6 +2,10 @@
 
 namespace AcmeWidgets\Shop\Models;
 
+/**
+ * Class Product
+ * @package AcmeWidgets\Shop\Models
+ */
 class Product
 {
     private $id;
@@ -11,6 +15,12 @@ class Product
     private $price;
 
 
+    /**
+     * Product constructor.
+     * @param string $id
+     * @param string $name
+     * @param float $price
+     */
     function __construct($id = '', $name = '', $price = 0.00)
     {
 
@@ -24,33 +34,52 @@ class Product
     }
 
 // basic getters & setters
+
+    /**
+     * @param string $id
+     */
     public function setId($id = '')
     {
         $this->id = $id;
     }
 
+    /**
+     * @return string
+     */
     public function getId()
     {
         return $this->id;
 
     }
 
+    /**
+     * @param string $name
+     */
     public function setName($name = '')
     {
         $this->name = $name;
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return $this->name;
 
     }
 
-    public function setPrice($name = 0.00)
+    /**
+     * @param float $price
+     */
+    public function setPrice($price = 0.00)
     {
         $this->price = $price;
     }
 
+    /**
+     * @return string
+     */
     public function getPrice()
     {
         return $this->price;

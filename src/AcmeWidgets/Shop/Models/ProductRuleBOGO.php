@@ -23,6 +23,12 @@ class ProductRuleBOGO extends Rule
 
     private $itemSoldQuantity;
 
+    /**
+     * ProductRuleBOGO constructor.
+     * @param string $productId
+     * @param int $minQuantity
+     * @param float $discount
+     */
     public function __construct(string $productId, int $minQuantity = 2, float $discount = 0.00)
     {
         $this->setType('product');
@@ -42,6 +48,9 @@ class ProductRuleBOGO extends Rule
        return $this->calculateCharge();
     }
 
+    /**
+     * @return float|int
+     */
     private function calculateCharge()
     {
         if($this->getItemSoldQuantity() >= $this->getMinQuantity()){

@@ -20,6 +20,8 @@ class Catalogue implements CatalogueInterface
     {
         if(!$this->getProductByID($id)){
             $this->products[] = new Product($id, $name, $price);
+
+            return true;
         }
         else{
 //            should probably add a bit more rubust error handling here, but time...
@@ -33,6 +35,7 @@ class Catalogue implements CatalogueInterface
     public function removeProduct($id = '')
     {
         // TODO: Implement removeProduct() method.
+        // not needed at the moment, but could be in future
     }
 
     /**
